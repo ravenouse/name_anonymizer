@@ -1,0 +1,6 @@
+flair
+pandas
+presidio-analyzer
+presidio-anonymizer
+transformers==4.30.2
+tqdm
