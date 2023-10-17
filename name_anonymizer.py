@@ -106,7 +106,9 @@ def anonymize_text(text_to_anonymize: str,
 
     return anonymized_result.text, analyzer_results
 
-def anonymize_dataframe_column(df: pd.DataFrame, column_name: str, new_column_name: str, engine_config: Dict[str, Union[AnalyzerEngine, AnonymizerEngine, Dict[str, OperatorConfig]]]) -> pd.DataFrame:
+def anonymize_dataframe_column(df: pd.DataFrame, column_name: str, 
+                               new_column_name: str, 
+                               engine_config: Dict[str, Union[AnalyzerEngine, AnonymizerEngine, Dict[str, OperatorConfig]]]) -> pd.DataFrame:
     """
     Anonymizes the specified column in a DataFrame using the provided engine configuration.
     The results are stored in a new column.
@@ -142,7 +144,7 @@ def anonymize_dataframe_column(df: pd.DataFrame, column_name: str, new_column_na
         anonymized_value, ent_list = anonymize_text(value, engine_config)
         for n in ent_list:
           if n.entity_type != 'PREDEFINED_NAME' and n.entity_type != 'PERSON':
-            print("Edage Case Found!")
+            print("An Edge Case Found!")
             print(n)
         anonymized_values.append(anonymized_value)
 
